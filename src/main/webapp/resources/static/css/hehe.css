@@ -1,0 +1,300 @@
+@charset "ISO-8859-1";
+.fs-4 {
+    color: #5d4037; /* Dark brown for the main text */
+}
+.fs-4 .highlight {
+    color: #2e7d32; /* Green for emphasis */
+    font-weight: bold;
+}
+
+.display-1 .text-primary {
+    color: #2e7d32; /* Dark green */
+}
+
+.display-1 span:not(.text-primary) {
+    color: #6b4226; /* Deep brown */
+}
+
+.display-1 .fw-bold:last-child {
+    color: #e65100; /* Rich orange */
+}
+
+
+.category-img {
+    width: 140px; /* Set desired width */
+    height: 140px; /* Set the same value as width */
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image covers the container without distortion */
+}
+
+.product-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px; /* Soft rounded corners */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+    object-fit: cover; /* Ensure the image fits nicely within the container */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Subtle black border */
+}
+
+/* Hover effect with a slight zoom and shadow */
+.product-img:hover {
+    transform: scale(1.05); /* Slight zoom on hover for elegance */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow effect on hover */
+}
+
+/* Container to space the product and add a clean layout */
+.product-image-container {
+    overflow: hidden;
+    padding: 10px;
+    background-color: #ffffff; /* White background for a clean look */
+    border-radius: 12px; /* Smooth corners for the entire product card */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Very light shadow for depth */
+    transition: box-shadow 0.3s ease; /* Smooth transition for hover shadow */
+}
+
+/* Add a slightly stronger shadow when hovering over the whole product container */
+.product-image-container:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow on hover */
+}
+
+/* Center text and align buttons better */
+.product-item {
+    padding: 20px;
+    text-align: center; /* Center-align all product text */
+}
+
+/* Main modal background overlay */
+/* Modal Background */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7); /* Darker overlay for better contrast */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    margin: 5% auto; 
+    padding: 20px;
+    width: 90%; 
+    max-width: 800px; 
+    max-height: 90vh; /* Set a maximum height */
+    height: auto; /* Allow the height to adjust based on content */
+    overflow-y: auto; /* Add scroll if content exceeds max height */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Close Button */
+
+
+/* Modal Container with Flexbox */
+.modal-container {
+    display: flex; /* Flex layout */
+}
+
+/* Left side (Image Section) */
+.modal-left {
+    background-color: #FFEAA8; /* Softer Yellow */
+    padding: 0;
+    width: 50%; /* Set to 50% */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-product-image {
+    width: 100%; /* Set width to 100% to fill the container */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 400px; /* Set a maximum height for the image */
+    border-radius: 8px; /* Keep rounded corners */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* Keep image shadow */
+}
+
+/* Right side (Text Section) */
+.modal-right {
+    padding: 20px;
+    width: 40%; /* Keep width */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left; /* Align text to the left */
+    flex-grow: 1; /* Allow this section to grow */
+    box-sizing: border-box;
+}
+
+.modal-right h2 {
+    margin-top: 0;
+    font-size: 1.8em; /* Larger title */
+    color: #333; /* Dark text color */
+}
+
+.modal-right p {
+    margin: 5px 0; /* Add some margin to avoid crowding */
+    width: 100%; /* Ensure elements take full width */
+}
+
+
+
+.close {
+    position: absolute;
+    top: 15px; /* Adjust top position */
+    right: 20px; /* Adjust right position */
+    font-size: 24px;
+    color: #FF6347; /* Tomato color for the close button */
+    cursor: pointer;
+    transition: color 0.3s, transform 0.3s; /* Smooth color and scale transition */
+    padding: 8px; /* Add padding for better clickable area */
+    border-radius: 50%; /* Make it circular */
+    background-color: rgba(255, 255, 255, 0.8); /* Light background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+
+.close:hover {
+    color: #FF4500; /* Darker color on hover */
+    transform: scale(1.1); /* Slightly increase size on hover */
+    background-color: rgba(255, 255, 255, 1); /* Darken background on hover */
+}
+
+
+
+
+
+.button-container {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center buttons vertically */
+}
+
+.btn {
+    margin: 0; /* Remove default button margin */
+}
+
+.logo-container {
+    position: absolute; /* Positioning it absolutely in the modal content */
+    top: 15px; /* Align it with the close button */
+    left: 20px; /* Align it from the left */
+    z-index: 1001; /* Make sure it's above other content */
+}
+
+.modal-logo {
+    width: 90px; /* Adjust width to your preference */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 4px; /* Optional: give it rounded corners */
+}
+        
+ 
+ .toast { 
+        visibility: hidden; 
+        min-width: 250px; 
+        margin-left: -125px; 
+        background: #f7eb91; /* Yellow background */
+        color: #333; /* Dark text color for contrast */
+        text-align: center; 
+        border-radius: 5px; 
+        padding: 16px; 
+        position: fixed; 
+        z-index: 1; 
+        right: 30px; /* Positioning on the right */
+        bottom: 30px; 
+        font-size: 17px; 
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
+    }
+    .toast.show { 
+        visibility: visible; 
+        animation: fadein 0.5s, fadeout 0.5s 2.5s; 
+    }
+   search-bar {
+        display: flex;
+        align-items: center;
+        border-radius: 0.5rem; /* For rounded corners */
+    }
+    
+    .search-button {
+        background: none; /* Remove background */
+        border: none; /* Remove border */
+    }
+	.container-fluid {
+            position: fixed; /* or 'fixed' */
+            top: 0;
+            z-index: 1000;
+            background-color: white;
+        }
+        
+        /* Add padding if using position fixed */
+        body {
+            padding-top: 120px; /* Adjust based on your navbar height */
+        }
+    .nav-link {
+        color: #000; /* Set default link color */
+        transition: color 0.3s; /* Smooth color transition */
+    }
+    
+    .nav-link:hover {
+        color: #007bff; /* Change color on hover */
+    }
+    
+    .profile-logo {
+        width: 60px; /* Set a specific width */
+        height: 60px; /* Set a specific height */
+        object-fit: cover; /* Ensure the image is properly cropped */
+    }
+   
+
+     @keyframes fadein { from { bottom: 0; opacity: 0; } to { bottom: 30px; opacity: 1; } }
+        @keyframes fadeout { from { bottom: 30px; opacity: 1; } to { bottom: 0; opacity: 0; } }
+        
+  .btn-start-shopping {
+    background-color: #2e7d32 !important; /* Deep green */
+    color: white !important;
+}
+
+.btn-join-now {
+    background-color: #5d4037 !important; /* Dark brown */
+    color: white !important;
+}
+ 
+
+
+.btn-cart {
+        transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition for transform and box-shadow */
+    }
+
+    .btn-cart:hover {
+        transform: scale(1.05); /* Slightly increase the size */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add shadow effect */
+    }
+/* Quantity Input Style */
+.quantity-input {
+    width: 40px; /* Adjust the width as needed */
+    height: 30px; /* Set height for a more compact appearance */
+    text-align: center; /* Center the number */
+    font-size: 14px; /* Font size for the text */
+    padding: 2px; /* Padding for a better touch target */
+    border: 1px solid #ced4da; /* Light gray border */
+    border-radius: 5px; /* Rounded corners */
+    margin: 0; /* Remove default margin */
+    box-shadow: none; /* Remove box shadow for a flat look */
+    transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+/* Change border color on focus */
+.quantity-input:focus {
+    border-color: #ffc107; /* Change border color when focused */
+    outline: none; /* Remove outline */
+}
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: -10px; /* Adjust as needed */
+}
+ 
+    
